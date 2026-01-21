@@ -1,0 +1,2037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KUMPANJE - Online Dating Platform | Meet Singles Today</title>
+    <meta name="description" content="Kumpanje is a premium 18+ online dating platform. Connect with singles, discover matches, and build meaningful relationships. Safe, secure, and verified profiles.">
+    <meta name="keywords" content="online dating, dating app, meet singles, dating platform, dating site, relationships, singles">
+    <meta name="author" content="Kumpanje">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kumpanje.com/">
+    <meta property="og:title" content="KUMPANJE - Online Dating Platform">
+    <meta property="og:description" content="Connect with singles and discover your perfect match on Kumpanje dating app.">
+    <meta property="og:image" content="https://kumpanje.com/og-image.jpg">
+    <meta property="og:site_name" content="Kumpanje">
+    
+    <!-- Twitter Cards -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://kumpanje.com/">
+    <meta property="twitter:title" content="KUMPANJE - Online Dating Platform">
+    <meta property="twitter:description" content="Connect with singles and discover your perfect match on Kumpanje dating app.">
+    <meta property="twitter:image" content="https://kumpanje.com/og-image.jpg">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="theme-color" content="#667eea">
+    <link rel="canonical" href="https://kumpanje.com/">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .btn-logout {
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            border: none;
+            color: white;
+            transition: background 0.3s;
+        }
+
+        .btn-logout:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .auth-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 80px);
+            padding: 2rem;
+        }
+
+        .auth-box {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            padding: 2rem;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .auth-box h1 {
+            margin-bottom: 1.5rem;
+            color: #667eea;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s;
+            will-change: transform;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        .toggle-link {
+            text-align: center;
+            margin-top: 1rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .toggle-link a {
+            color: #667eea;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .discovery-container {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 2rem;
+        }
+
+        .filters {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            height: fit-content;
+        }
+
+        .filters h3 {
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .filter-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .profiles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            will-change: transform;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            position: relative;
+        }
+
+        .online-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 12px;
+            height: 12px;
+            background: #4caf50;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        .profile-info {
+            padding: 1.5rem;
+        }
+
+        .profile-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-age-location {
+            color: #999;
+            margin-bottom: 1rem;
+        }
+
+        .profile-bio {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .profile-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            background: #f0f0f0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: #667eea;
+        }
+
+        .profile-actions {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-like {
+            flex: 1;
+            min-width: 80px;
+            padding: 0.5rem;
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            will-change: background, color, transform;
+            transition: all 0.15s ease;
+        }
+
+        .btn-like:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-like.liked {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-message {
+            flex: 1;
+            min-width: 80px;
+            padding: 0.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .messages-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            min-height: calc(100vh - 150px);
+        }
+
+        .conversations-list {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .conversation-item {
+            padding: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .conversation-item:hover {
+            background: #f9f9f9;
+        }
+
+        .conversation-item.active {
+            background: #f0f0f0;
+        }
+
+        .conversation-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .conversation-details {
+            flex: 1;
+        }
+
+        .conversation-name {
+            font-weight: 600;
+        }
+
+        .conversation-preview {
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .chat-box {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 1.5rem;
+            overflow-y: auto;
+            max-height: 500px;
+        }
+
+        .message {
+            margin-bottom: 1rem;
+            display: flex;
+            animation: slideIn 0.2s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.sent {
+            justify-content: flex-end;
+        }
+
+        .message-bubble {
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            max-width: 70%;
+            will-change: transform;
+        }
+
+        .message.sent .message-bubble {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .message.received .message-bubble {
+            background: #f0f0f0;
+        }
+
+        .chat-input-area {
+            padding: 1.5rem;
+            border-top: 1px solid #f0f0f0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .chat-input-area input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .btn-send {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .profile-view {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .profile-header {
+            height: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+            color: white;
+        }
+
+        .profile-body {
+            padding: 2rem;
+        }
+
+        .profile-section {
+            margin-bottom: 2rem;
+        }
+
+        .profile-section h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .profile-interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .interest-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .admin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #667eea;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .admin-table {
+            width: 100%;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+
+        .admin-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .admin-table th {
+            background: #f5f5f5;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        .admin-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .action-btn {
+            padding: 0.5rem 1rem;
+            margin: 0 0.25rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .btn-ban {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .btn-approve {
+            background: #51cf66;
+            color: white;
+        }
+
+        .btn-view {
+            background: #667eea;
+            color: white;
+        }
+
+        .legal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .legal-content h2 {
+            color: #667eea;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .legal-content h3 {
+            color: #764ba2;
+            margin-top: 1.5rem;
+        }
+
+        .legal-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.7;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: #999;
+        }
+
+        .settings-section {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .settings-section h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 24px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            border-radius: 24px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #667eea;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .report-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .report-option {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .report-option:hover {
+            background: #f9f9f9;
+        }
+
+        @media (max-width: 768px) {
+            .discovery-container {
+                grid-template-columns: 1fr;
+            }
+            .filters {
+                display: none;
+            }
+            .messages-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .subscription-plan {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 1.5rem;
+            margin-bottom: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .subscription-plan:hover {
+            border-color: #667eea;
+            background: #f9f9f9;
+            transform: translateY(-2px);
+        }
+
+        .subscription-plan.selected {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .subscription-plan.selected div {
+            color: white;
+        }
+
+        .subscription-plan.selected div:nth-child(3) {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .payment-option {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .payment-option:hover {
+            border-color: #667eea;
+            background: #f9f9f9;
+            transform: translateX(5px);
+        }
+
+        .payment-option span:first-child {
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .subscription-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .premium-lock {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.8);
+            padding: 1.5rem;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .premium-lock button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav id="nav">
+        <div class="nav-container">
+            <div class="logo">❤️ Kumpanje</div>
+            <ul class="nav-links">
+                <li><a onclick="showPage('discover')">Discover</a></li>
+                <li><a onclick="showPage('messages')">Messages</a></li>
+                <li><a onclick="showPage('likes')">Likes</a></li>
+                <li><a onclick="showPage('profile')">My Profile</a></li>
+                <li><a onclick="showPage('settings')">Settings</a></li>
+                <li id="adminLink" style="display:none;"><a onclick="showPage('admin')">Admin</a></li>
+                <li><button class="btn-logout" onclick="logout()">Logout</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Auth Page -->
+    <div id="auth" class="page active">
+        <div class="auth-container">
+            <div class="auth-box">
+                <h1>❤️ Welcome to KUMPANJE</h1>
+                <div id="loginForm">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="loginEmail" placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="loginPassword" placeholder="••••••••">
+                    </div>
+                    <button class="btn-primary" onclick="handleLogin()">Login</button>
+                    <div class="toggle-link">Don't have an account? <a onclick="toggleAuthForm()">Sign Up</a></div>
+                </div>
+
+                <div id="registerForm" class="hidden">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="registerName" placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="registerEmail" placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="registerPassword" placeholder="••••••••">
+                    </div>
+                    <div class="form-group">
+                        <label>Age</label>
+                        <input type="number" id="registerAge" placeholder="25" min="18">
+                    </div>
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <select id="registerGender">
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Non-binary</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Location</label>
+                        <input type="text" id="registerLocation" placeholder="City, Country">
+                    </div>
+                    <div class="form-group">
+                        <label>Bio</label>
+                        <input type="text" id="registerBio" placeholder="Tell us about yourself">
+                    </div>
+                    <button class="btn-primary" onclick="handleRegister()">Create Account</button>
+                    <div class="toggle-link">Already have an account? <a onclick="toggleAuthForm()">Login</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Discover Page -->
+    <div id="discover" class="page">
+        <div class="container">
+            <div class="discovery-container">
+                <div class="filters">
+                    <h3>Filter</h3>
+                    <div class="filter-group">
+                        <label>Age Range</label>
+                        <input type="range" id="ageFilter" min="18" max="80">
+                    </div>
+                    <button class="btn-primary" onclick="applyFilters()">Apply</button>
+                </div>
+                <div class="profiles-grid" id="profilesGrid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Messages Page -->
+    <div id="messages" class="page">
+        <div class="container">
+            <div class="messages-container">
+                <div class="conversations-list" id="conversationsList"></div>
+                <div class="chat-box">
+                    <div class="chat-header"><h2 id="chatName">Select a conversation</h2></div>
+                    <div class="chat-messages" id="chatMessages"></div>
+                    <div class="chat-input-area" id="chatInputArea" style="display: none;">
+                        <input type="text" id="messageInput" placeholder="Type your message...">
+                        <button class="btn-send" onclick="sendMessage()">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Likes Page -->
+    <div id="likes" class="page">
+        <div class="container">
+            <h2 style="margin-bottom: 2rem; color: #667eea;">❤️ Your Likes</h2>
+            <div class="profiles-grid" id="likesGrid"></div>
+        </div>
+    </div>
+
+    <!-- Profile Page -->
+    <div id="profile" class="page">
+        <div class="container">
+            <div class="profile-view">
+                <div class="profile-header">
+                    <div>
+                        <h2 id="profileDisplayName" style="font-size: 2.5rem;">John Doe</h2>
+                        <div id="profileDisplayAge" style="font-size: 1.2rem;">28 • New York</div>
+                    </div>
+                </div>
+                <div class="profile-body">
+                    <div class="profile-section">
+                        <h3>About</h3>
+                        <p id="profileAbout">Welcome to my profile!</p>
+                    </div>
+                    <div class="profile-section">
+                        <h3>Interests</h3>
+                        <div class="profile-interests" id="profileInterests"></div>
+                    </div>
+                    <button class="btn-primary" onclick="openModal('editProfileModal')">Edit Profile</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Page -->
+    <div id="settings" class="page">
+        <div class="container">
+            <div style="max-width: 600px;">
+                <h2 style="margin-bottom: 2rem; color: #667eea;">⚙️ Settings</h2>
+                
+                <div class="settings-section">
+                    <h3>Privacy</h3>
+                    <div class="setting-item">
+                        <label>Profile Visibility</label>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3>Account</h3>
+                    <button class="btn-primary" onclick="openModal('changePasswordModal')" style="margin-bottom: 1rem;">Change Password</button>
+                    <button style="background: #ff6b6b; color: white; padding: 0.75rem; width: 100%; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;" onclick="deleteAccount()">Delete Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="admin" class="page">
+        <div class="container">
+            <h2 style="margin-bottom: 2rem; color: #667eea;">🛡️ Admin Dashboard</h2>
+            
+            <div class="admin-grid">
+                <div class="stat-card">
+                    <div>Total Users</div>
+                    <div class="stat-value">8</div>
+                </div>
+                <div class="stat-card">
+                    <div>Active Now</div>
+                    <div class="stat-value">4</div>
+                </div>
+                <div class="stat-card">
+                    <div>Reports</div>
+                    <div class="stat-value">2</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #667eea;">📋 User Reports</h3>
+            <div class="admin-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Reporter</th>
+                            <th>Reported User</th>
+                            <th>Reason</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reportsTable"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms Page -->
+    <div id="terms" class="page">
+        <div class="container">
+            <div class="legal-content">
+                <h1 style="color: #667eea; margin-bottom: 2rem;">Terms & Conditions</h1>
+                <h2>1. Age Restriction (18+ Only)</h2>
+                <p><strong>Kumpanje is strictly for users aged 18 years or older.</strong> By registering, you confirm that you are at least 18 years old. Users under 18 will have their accounts permanently banned.</p>
+                
+                <h2>2. User Conduct</h2>
+                <p>Users must NOT:</p>
+                <ul>
+                    <li>Harass or threaten other users</li>
+                    <li>Post explicit or offensive content</li>
+                    <li>Engage in scams or fraud</li>
+                    <li>Share others' personal information</li>
+                    <li>Use fake profiles or misleading information</li>
+                </ul>
+
+                <h2>3. Account Responsibility</h2>
+                <p>You are responsible for maintaining your account credentials. Notify us immediately of unauthorized use.</p>
+
+                <h2>4. Termination</h2>
+                <p>We reserve the right to suspend or terminate accounts that violate these terms.</p>
+
+                <p style="margin-top: 2rem; color: #999;">Last Updated: January 21, 2026</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Page -->
+    <div id="privacy" class="page">
+        <div class="container">
+            <div class="legal-content">
+                <h1 style="color: #667eea; margin-bottom: 2rem;">Privacy Policy</h1>
+                
+                <h2>1. Information Collection</h2>
+                <p>We collect: name, email, age, location, bio, photos, interests, and messages.</p>
+
+                <h2>2. Data Security</h2>
+                <p>We use encryption, SSL/TLS, password hashing, and regular security audits.</p>
+
+                <h2>3. User Control</h2>
+                <p>You have the right to access, update, delete, or export your personal data.</p>
+
+                <h2>4. GDPR Compliance</h2>
+                <p>We comply with EU GDPR requirements for all users.</p>
+
+                <h2>5. Contact</h2>
+                <p>For privacy concerns: privacy@kumpanje.com</p>
+
+                <p style="margin-top: 2rem; color: #999;">Last Updated: January 21, 2026</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="reportModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Report User</h2>
+                <button class="close-btn" onclick="closeModal('reportModal')">&times;</button>
+            </div>
+            <div class="report-options" id="reportOptions"></div>
+            <textarea placeholder="Additional details..." id="reportDetails" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 8px; margin-top: 1rem; min-height: 100px;"></textarea>
+            <button class="btn-primary" onclick="submitReport()" style="margin-top: 1rem; width: 100%;">Submit Report</button>
+        </div>
+    </div>
+
+    <div id="changePasswordModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Change Password</h2>
+                <button class="close-btn" onclick="closeModal('changePasswordModal')">&times;</button>
+            </div>
+            <div class="form-group">
+                <label>Current Password</label>
+                <input type="password" id="currentPassword">
+            </div>
+            <div class="form-group">
+                <label>New Password</label>
+                <input type="password" id="newPassword">
+            </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" id="confirmPassword">
+            </div>
+            <button class="btn-primary" onclick="changePassword()" style="width: 100%;">Update Password</button>
+        </div>
+    </div>
+
+    <div id="editProfileModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Edit Profile</h2>
+                <button class="close-btn" onclick="closeModal('editProfileModal')">&times;</button>
+            </div>
+            <div class="form-group">
+                <label>Bio</label>
+                <textarea id="editBio" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 8px; min-height: 100px;"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Interests (comma-separated)</label>
+                <input type="text" id="editInterests" placeholder="Hiking, Travel, Cooking">
+            </div>
+            <button class="btn-primary" onclick="saveProfile()" style="width: 100%;">Save Changes</button>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">🌟 Welcome to Kumpanje Premium!</h2>
+                <button class="close-btn" onclick="closeModal('paymentModal')">&times;</button>
+            </div>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <p style="font-size: 1.1rem; font-weight: 600; color: #667eea; margin-bottom: 0.5rem;">Unlock Unlimited Messaging</p>
+                <p style="font-size: 0.95rem; color: #666; margin-bottom: 1.5rem;">Connect with matches and start conversations today!</p>
+            </div>
+
+            <h3 style="color: #667eea; margin-bottom: 1rem; font-size: 1.1rem;">📅 Select Subscription Plan</h3>
+            
+            <!-- Subscription Plans -->
+            <div style="margin-bottom: 2rem;">
+                <button class="subscription-plan" onclick="selectSubscription('daily', '$1.99', 1)" data-plan="daily">
+                    <div style="font-weight: 700; font-size: 1.1rem; color: #667eea;">💰 $1.99</div>
+                    <div style="font-weight: 600;">Daily</div>
+                    <div style="font-size: 0.85rem; color: #999;">24 hours access</div>
+                </button>
+                <button class="subscription-plan" onclick="selectSubscription('weekly', '$9.99', 7)" data-plan="weekly">
+                    <div style="font-weight: 700; font-size: 1.1rem; color: #667eea;">💰 $9.99</div>
+                    <div style="font-weight: 600;">Weekly</div>
+                    <div style="font-size: 0.85rem; color: #999;">7 days access</div>
+                </button>
+                <button class="subscription-plan" onclick="selectSubscription('monthly', '$24.99', 30)" data-plan="monthly">
+                    <div style="font-weight: 700; font-size: 1.1rem; color: #667eea;">💰 $24.99</div>
+                    <div style="font-weight: 600;">Monthly</div>
+                    <div style="font-size: 0.85rem; color: #999;">30 days access</div>
+                </button>
+            </div>
+
+            <h3 style="color: #667eea; margin-bottom: 1rem; font-size: 1.1rem;">Select Payment Method</h3>
+
+            <!-- Malawi Payments -->
+            <div style="margin-bottom: 1.5rem;">
+                <h4 style="color: #764ba2; font-size: 0.95rem; margin-bottom: 0.75rem;">🇲🇼 Malawi</h4>
+                <button class="payment-option" onclick="initiatePayment('airtel')">
+                    <span style="font-weight: 600;">📱 Airtel Money</span>
+                    <span style="font-size: 0.85rem; color: #999;">Pay via Airtel</span>
+                </button>
+                <button class="payment-option" onclick="initiatePayment('mpamba')">
+                    <span style="font-weight: 600;">📱 M-Pamba</span>
+                    <span style="font-size: 0.85rem; color: #999;">Pay via M-Pamba</span>
+                </button>
+                <button class="payment-option" onclick="initiatePayment('visa-atm')">
+                    <span style="font-weight: 600;">🏧 ATM Visa Card</span>
+                    <span style="font-size: 0.85rem; color: #999;">Pay with Visa Card</span>
+                </button>
+            </div>
+
+            <!-- International Payments -->
+            <div>
+                <h4 style="color: #764ba2; font-size: 0.95rem; margin-bottom: 0.75rem;">🌍 International</h4>
+                <button class="payment-option" onclick="initiatePayment('creditcard')">
+                    <span style="font-weight: 600;">💳 Credit Card</span>
+                    <span style="font-size: 0.85rem; color: #999;">Visa, Mastercard, Amex</span>
+                </button>
+                <button class="payment-option" onclick="initiatePayment('paypal')">
+                    <span style="font-weight: 600;">🅿️ PayPal</span>
+                    <span style="font-size: 0.85rem; color: #999;">Pay with PayPal</span>
+                </button>
+            </div>
+
+            <div style="margin-top: 1.5rem; text-align: center;">
+                <button style="background: #f0f0f0; color: #666; padding: 0.75rem; width: 100%; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;" onclick="closeModal('paymentModal')">
+                    ⏭️ Skip for Now (Browse as Free User)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Processing Modal -->
+    <div id="paymentProcessingModal" class="modal">
+        <div class="modal-content" style="max-width: 400px;">
+            <div style="text-align: center;">
+                <h2 class="modal-title" style="margin-bottom: 1.5rem;" id="paymentMethodTitle">Processing Payment</h2>
+                <div id="paymentForm"></div>
+                <button class="btn-primary" onclick="processPayment()" style="margin-top: 1rem;">Complete Payment</button>
+                <button style="background: #ddd; color: #333; padding: 0.75rem; width: 100%; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; margin-top: 0.5rem;" onclick="closeModal('paymentProcessingModal')">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a onclick="showPage('terms')">Terms & Conditions</a>
+            <a onclick="showPage('privacy')">Privacy Policy</a>
+            <a href="mailto:support@kumpanje.com">Contact Support</a>
+        </div>
+        <p>&copy; 2026 Kumpanje. 18+ Only Platform | All rights reserved</p>
+    </footer>
+
+    <script>
+        // ============ PERFORMANCE OPTIMIZATIONS ============
+        const DOM_CACHE = {
+            profilesGrid: null,
+            likesGrid: null,
+            chatMessages: null,
+            conversationsList: null,
+            nav: null
+        };
+        let selectedPaymentMethod = null;
+        let pendingMessageName = null;
+
+        function cacheDOM() {
+            DOM_CACHE.profilesGrid = document.getElementById('profilesGrid');
+            DOM_CACHE.likesGrid = document.getElementById('likesGrid');
+            DOM_CACHE.chatMessages = document.getElementById('chatMessages');
+            DOM_CACHE.conversationsList = document.getElementById('conversationsList');
+            DOM_CACHE.nav = document.getElementById('nav');
+        }
+
+        // Debounce helper
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // HTML template cache
+        const TEMPLATES = {};
+
+        function cacheTemplate(name, html) {
+            TEMPLATES[name] = html;
+        }
+
+        // ============ DATA ============
+        const sampleProfiles = [
+            { id: 1, name: 'Emma', age: 26, location: 'New York', bio: 'Love hiking and coffee', interests: ['Hiking', 'Travel', 'Coffee'], online: true },
+            { id: 2, name: 'Sophie', age: 24, location: 'Brooklyn', bio: 'Artist and photographer', interests: ['Art', 'Photography', 'Music'], online: true },
+            { id: 3, name: 'Jessica', age: 27, location: 'Manhattan', bio: 'Adventure seeker', interests: ['Fitness', 'Cooking', 'Adventure'], online: false },
+            { id: 4, name: 'Olivia', age: 25, location: 'Queens', bio: 'Book lover and foodie', interests: ['Books', 'Food', 'Travel'], online: true },
+            { id: 5, name: 'Mia', age: 28, location: 'Brooklyn', bio: 'Yoga enthusiast', interests: ['Yoga', 'Meditation', 'Nature'], online: false },
+            { id: 6, name: 'Charlotte', age: 26, location: 'Manhattan', bio: 'Music lover', interests: ['Music', 'Concerts', 'Dancing'], online: true },
+            { id: 7, name: 'Ava', age: 29, location: 'New York', bio: 'Entrepreneur and fitness buff', interests: ['Fitness', 'Business', 'Travel'], online: true },
+            { id: 8, name: 'Sophia', age: 25, location: 'Brooklyn', bio: 'Dog lover and designer', interests: ['Dogs', 'Design', 'Art'], online: false }
+        ];
+
+        const sampleConversations = [
+            { id: 1, name: 'Emma', lastMessage: 'Had an amazing time!', messages: [
+                { sent: false, text: 'Hey! How are you?', time: '2:30 PM' },
+                { sent: true, text: 'Great! How about you?', time: '2:31 PM' }
+            ]},
+            { id: 2, name: 'Sophie', lastMessage: 'Let\'s grab coffee', messages: [
+                { sent: false, text: 'Hi there!', time: '1:15 PM' },
+                { sent: true, text: 'Hey!', time: '1:16 PM' }
+            ]}
+        ];
+
+        let currentUser = null;
+        let currentConversation = null;
+        let blockedUsers = new Set();
+        let likedProfiles = new Set();
+        let reportedUser = null;
+        
+        // Optimized state tracking
+        let profilesCache = [];
+        let lastRenderTime = 0;
+
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.add('active');
+            modal.style.animation = 'none';
+            requestAnimationFrame(() => { modal.style.animation = ''; });
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal')) {
+                e.target.classList.remove('active');
+            }
+        }, { passive: true });
+
+        function toggleAuthForm() {
+            document.getElementById('loginForm').classList.toggle('hidden');
+            document.getElementById('registerForm').classList.toggle('hidden');
+        }
+
+        function handleLogin() {
+            try {
+                const email = document.getElementById('loginEmail').value;
+                const password = document.getElementById('loginPassword').value;
+                
+                console.log('Login attempt:', email);
+                
+                if (!email || !password) { 
+                    alert('❌ Please fill all fields'); 
+                    return; 
+                }
+                
+                currentUser = { 
+                    name: 'John Doe', 
+                    email, 
+                    age: 28, 
+                    location: 'New York', 
+                    bio: 'Welcome!', 
+                    isAdmin: email.includes('admin'),
+                    isPremium: false,
+                    premiumExpiry: null
+                };
+                
+                console.log('User created:', currentUser);
+                
+                document.getElementById('nav').style.display = 'block';
+                if (currentUser.isAdmin) document.getElementById('adminLink').style.display = 'block';
+                
+                // Show discover page
+                showPage('discover');
+                console.log('Discover page shown');
+                
+                // Clear form fields
+                document.getElementById('loginEmail').value = '';
+                document.getElementById('loginPassword').value = '';
+                
+                alert('✅ Welcome ' + currentUser.name + '! Browse profiles or click Message to chat.');
+            } catch (error) {
+                console.error('Login error:', error);
+                alert('Error logging in: ' + error.message);
+            }
+        }
+
+        function handleRegister() {
+            try {
+                const name = document.getElementById('registerName').value;
+                const email = document.getElementById('registerEmail').value;
+                const age = parseInt(document.getElementById('registerAge').value);
+                const location = document.getElementById('registerLocation').value;
+                
+                console.log('Signup attempt:', { name, email, age, location });
+                
+                if (!name || !email || !age || !location) { 
+                    alert('❌ Please fill all fields'); 
+                    return; 
+                }
+                if (age < 18) { 
+                    alert('❌ You must be 18 or older to join'); 
+                    return; 
+                }
+                
+                // Grant 24 hours free trial for new users
+                const trialExpiry = new Date();
+                trialExpiry.setDate(trialExpiry.getDate() + 1);
+                
+                currentUser = { 
+                    name, 
+                    email, 
+                    age, 
+                    location, 
+                    bio: document.getElementById('registerBio').value,
+                    isPremium: true,
+                    subscriptionPlan: 'trial',
+                    subscriptionPrice: 'FREE',
+                    premiumExpiry: trialExpiry.toLocaleDateString(),
+                    trialUser: true
+                };
+                
+                console.log('New user created with 24-hour trial:', currentUser);
+                
+                document.getElementById('nav').style.display = 'block';
+                
+                // Show discover page
+                showPage('discover');
+                console.log('Discover page shown');
+                
+                // Clear form fields
+                document.getElementById('registerName').value = '';
+                document.getElementById('registerEmail').value = '';
+                document.getElementById('registerPassword').value = '';
+                document.getElementById('registerAge').value = '';
+                document.getElementById('registerLocation').value = '';
+                document.getElementById('registerBio').value = '';
+                
+                alert('✅ Account created! Welcome ' + name + '!\n\n🎉 You get 24 HOURS FREE PREMIUM ACCESS!\n\nExpires: ' + currentUser.premiumExpiry + '\n\nEnjoy unlimited messaging for free today!\n\nAfter 24 hours, please renew your subscription to continue.');
+            } catch (error) {
+                console.error('Signup error:', error);
+                alert('Error signing up: ' + error.message);
+            }
+        }
+
+        function logout() {
+            currentUser = null;
+            showPage('auth');
+            document.getElementById('nav').style.display = 'none';
+        }
+
+        function showPage(name) {
+            // Check for expired subscription on protected pages
+            if ((name === 'messages') && checkAndRevokeExpiredSubscription()) {
+                alert('❌ Access Denied: Your premium subscription has expired.');
+                return;
+            }
+            
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(name).classList.add('active');
+            
+            if (name === 'discover') renderProfiles();
+            if (name === 'messages') renderConversations();
+            if (name === 'profile') displayProfile();
+            if (name === 'likes') renderLikes();
+            if (name === 'admin') renderAdmin();
+        }
+
+        function renderProfiles() {
+            const filtered = sampleProfiles.filter(p => !blockedUsers.has(p.id));
+            let html = '';
+            for (let i = 0; i < filtered.length; i++) {
+                const p = filtered[i];
+                const liked = likedProfiles.has(p.id);
+                html += `<div class="profile-card" data-id="${p.id}"><div class="profile-image">${p.name.charAt(0)}${p.online ? '<div class="online-badge"></div>' : ''}</div><div class="profile-info"><div class="profile-name">${p.name}, ${p.age}</div><div class="profile-age-location">📍 ${p.location}</div><div class="profile-bio">${p.bio}</div><div class="profile-tags">${p.interests.map(i => `<span class="tag">${i}</span>`).join('')}</div><div class="profile-actions"><button class="btn-like ${liked ? 'liked' : ''}" data-action="like" data-id="${p.id}">${liked ? '❤️ Liked' : '❤️ Like'}</button><button class="btn-message" data-action="message" data-name="${p.name}">💬</button><button class="btn-message" style="background: #ff9800;" data-action="report" data-id="${p.id}" data-name="${p.name}">⚠️</button><button class="btn-message" style="background: #f44336;" data-action="block" data-id="${p.id}">🚫</button></div></div></div>`;
+            }
+            DOM_CACHE.profilesGrid.innerHTML = html;
+        }
+
+        function likeProfile(id) {
+            // Instant visual feedback
+            const btn = document.querySelector(`[data-action="like"][data-id="${id}"]`);
+            if (btn) {
+                const isLiked = likedProfiles.has(id);
+                btn.classList.toggle('liked');
+                btn.textContent = isLiked ? '❤️ Like' : '❤️ Liked';
+                btn.style.transform = 'scale(1.05)';
+                setTimeout(() => btn.style.transform = '', 100);
+                
+                // Update data
+                if (isLiked) {
+                    likedProfiles.delete(id);
+                } else {
+                    likedProfiles.add(id);
+                }
+            }
+        }
+
+        function blockUser(id) {
+            blockedUsers.add(id);
+            const card = document.querySelector(`[data-id="${id}"]`);
+            if (card) {
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.8)';
+                card.style.transition = 'all 0.2s ease';
+                setTimeout(() => { card.style.display = 'none'; }, 200);
+            }
+            alert('User blocked');
+        }
+
+        function isSubscriptionExpired() {
+            if (!currentUser.isPremium || !currentUser.premiumExpiry) {
+                return false;
+            }
+            const expiryDate = new Date(currentUser.premiumExpiry);
+            const today = new Date();
+            return today > expiryDate;
+        }
+
+        function checkAndRevokeExpiredSubscription() {
+            if (currentUser.isPremium && isSubscriptionExpired()) {
+                currentUser.isPremium = false;
+                currentUser.subscriptionPlan = null;
+                currentUser.subscriptionPrice = null;
+                currentUser.premiumExpiry = null;
+                currentUser.trialUser = false;
+                
+                const message = currentUser.trialUser 
+                    ? '⏰ Your FREE trial has expired!\n\nYou no longer have access to premium features.\n\nPlease subscribe to continue messaging.'
+                    : '⏰ Your subscription has expired!\n\nYou no longer have access to premium features.\n\nPlease renew your subscription to continue messaging.';
+                
+                alert(message);
+                return true;
+            }
+            return false;
+        }
+
+        function startConversation(name) {
+            // Check if subscription expired
+            if (checkAndRevokeExpiredSubscription()) {
+                pendingMessageName = name;
+                openModal('paymentModal');
+                return;
+            }
+            
+            if (!currentUser.isPremium) {
+                pendingMessageName = name;
+                alert('🔒 Premium feature! You need an active subscription to message. Upgrade now to start chatting!');
+                openModal('paymentModal');
+                return;
+            }
+            currentConversation = { name, messages: [] };
+            renderConversations();
+            showPage('messages');
+        }
+
+        function renderConversations() {
+            let html = '';
+            for (let i = 0; i < sampleConversations.length; i++) {
+                const c = sampleConversations[i];
+                const active = currentConversation?.name === c.name ? 'active' : '';
+                html += `<div class="conversation-item ${active}" data-index="${i}" data-name="${c.name}"><div class="conversation-avatar">${c.name.charAt(0)}</div><div class="conversation-details"><div class="conversation-name">${c.name}</div><div class="conversation-preview">${c.lastMessage}</div></div></div>`;
+            }
+            DOM_CACHE.conversationsList.innerHTML = html;
+        }
+
+        function selectConversation(i, name) {
+            currentConversation = sampleConversations[i];
+            document.getElementById('chatName').textContent = name;
+            document.getElementById('chatInputArea').style.display = 'flex';
+            renderMessages();
+            requestAnimationFrame(() => {
+                DOM_CACHE.chatMessages.scrollTop = DOM_CACHE.chatMessages.scrollHeight;
+            });
+        }
+
+        function renderMessages() {
+            requestAnimationFrame(() => {
+                let html = '';
+                for (let i = 0; i < currentConversation.messages.length; i++) {
+                    const m = currentConversation.messages[i];
+                    html += `<div class="message ${m.sent ? 'sent' : 'received'}"><div class="message-bubble">${m.text}</div></div>`;
+                }
+                DOM_CACHE.chatMessages.innerHTML = html;
+                DOM_CACHE.chatMessages.scrollTop = DOM_CACHE.chatMessages.scrollHeight;
+            });
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const text = input.value.trim();
+            if (!text) return;
+            
+            // Instant visual feedback - show message immediately
+            const msg = { sent: true, text, time: new Date().toLocaleTimeString() };
+            currentConversation.messages.push(msg);
+            
+            const msgDiv = document.createElement('div');
+            msgDiv.className = 'message sent';
+            msgDiv.innerHTML = `<div class="message-bubble">${text}</div>`;
+            DOM_CACHE.chatMessages.appendChild(msgDiv);
+            DOM_CACHE.chatMessages.scrollTop = DOM_CACHE.chatMessages.scrollHeight;
+            
+            input.value = '';
+            input.focus();
+        }
+
+        function renderLikes() {
+            const liked = [];
+            for (let id of likedProfiles) {
+                const p = sampleProfiles.find(x => x.id === id);
+                if (p) liked.push(p);
+            }
+            let html = liked.length ? '' : '<div class="empty-state">No likes yet</div>';
+            for (let i = 0; i < liked.length; i++) {
+                const p = liked[i];
+                html += `<div class="profile-card"><div class="profile-image">${p.name.charAt(0)}</div><div class="profile-info"><div class="profile-name">${p.name}, ${p.age}</div><button class="btn-message" data-action="message" data-name="${p.name}">💬 Message</button><button class="btn-like" data-action="like" data-id="${p.id}">Unlike</button></div></div>`;
+            }
+            DOM_CACHE.likesGrid.innerHTML = html;
+        }
+
+        function displayProfile() {
+            if (currentUser) {
+                // Check for expired subscription
+                checkAndRevokeExpiredSubscription();
+                
+                document.getElementById('profileDisplayName').textContent = currentUser.name;
+                document.getElementById('profileDisplayAge').textContent = `${currentUser.age} • ${currentUser.location}`;
+                document.getElementById('profileAbout').textContent = currentUser.bio;
+                
+                // Show subscription status
+                let profileInterests = document.getElementById('profileInterests');
+                if (currentUser.isPremium) {
+                    let planText = '';
+                    if (currentUser.subscriptionPlan === 'trial') {
+                        planText = '🎉 FREE TRIAL';
+                    } else {
+                        planText = currentUser.subscriptionPlan ? currentUser.subscriptionPlan.toUpperCase() : 'PREMIUM';
+                    }
+                    const price = currentUser.subscriptionPrice || '$0.00';
+                    profileInterests.innerHTML = `<div class="subscription-badge">✨ ${planText}</div>`;
+                    if (currentUser.premiumExpiry) {
+                        let expiryText = currentUser.subscriptionPlan === 'trial' ? '⏳ Trial Expires: ' : 'Expires: ';
+                        profileInterests.innerHTML += `<div style="font-size: 0.85rem; color: #999; margin-top: 0.5rem;">${expiryText}${currentUser.premiumExpiry}</div>`;
+                    }
+                } else {
+                    profileInterests.innerHTML = '<button class="btn-primary" onclick="openModal(\'paymentModal\')" style="width: auto;">🔓 Upgrade to Premium</button>';
+                }
+            }
+        }
+
+        function saveProfile() {
+            currentUser.bio = document.getElementById('editBio').value;
+            displayProfile();
+            closeModal('editProfileModal');
+            alert('Profile updated!');
+        }
+
+        function openReportModal(id, name) {
+            reportedUser = { id, name };
+            const reasons = ['Fake profile', 'Inappropriate photos', 'Harassment', 'Scam', 'Age misrepresentation'];
+            let html = '';
+            for (let i = 0; i < reasons.length; i++) {
+                html += `<label class="report-option"><input type="radio" name="reason" value="${reasons[i]}"> ${reasons[i]}</label>`;
+            }
+            document.getElementById('reportOptions').innerHTML = html;
+            openModal('reportModal');
+        }
+
+        // ============ CURRENCY SYSTEM ============
+        const CURRENCY_RATES = {
+            'airtel': { currency: 'MWK', symbol: 'K', rate: 1500, country: 'Malawi' },
+            'mpamba': { currency: 'MWK', symbol: 'K', rate: 1500, country: 'Malawi' },
+            'visa-atm': { currency: 'MWK', symbol: 'K', rate: 1500, country: 'Malawi' },
+            'creditcard': { currency: 'USD', symbol: '$', rate: 1, country: 'USA' },
+            'paypal': { currency: 'USD', symbol: '$', rate: 1, country: 'USA' }
+        };
+
+        function convertPrice(usdPrice, paymentMethod) {
+            const rateInfo = CURRENCY_RATES[paymentMethod];
+            if (!rateInfo) return usdPrice + '';
+            
+            const convertedPrice = (parseFloat(usdPrice) * rateInfo.rate).toFixed(2);
+            const isLocalCurrency = rateInfo.rate !== 1;
+            
+            if (isLocalCurrency) {
+                return `${rateInfo.symbol}${convertedPrice}`;
+            } else {
+                return `${rateInfo.symbol}${convertedPrice}`;
+            }
+        }
+
+        function getCurrencyInfo(paymentMethod) {
+            return CURRENCY_RATES[paymentMethod];
+        }
+
+        // ============ PAYMENT FUNCTIONS ============
+        let selectedSubscription = { plan: null, price: null, days: null };
+
+        function selectSubscription(plan, price, days) {
+            selectedSubscription = { plan, price, days };
+            
+            // Update UI
+            document.querySelectorAll('.subscription-plan').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            document.querySelector(`[data-plan="${plan}"]`).classList.add('selected');
+            
+            alert(`✅ Selected: ${plan.toUpperCase()} - ${price} for ${days} days`);
+        }
+
+        function initiatePayment(method) {
+            if (!selectedSubscription.plan) {
+                alert('❌ Please select a subscription plan first');
+                return;
+            }
+
+            selectedPaymentMethod = method;
+            let formHTML = '';
+            let title = '';
+            
+            const currencyInfo = getCurrencyInfo(method);
+            const convertedPrice = convertPrice(selectedSubscription.price.replace('$', ''), method);
+
+            const paymentMethods = {
+                'airtel': {
+                    title: '📱 Airtel Money Payment (Malawi)',
+                    form: `
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="text" placeholder="e.g., 0888123456" id="paymentPhone">
+                        </div>
+                        <div style="background: #f0f0f0; padding: 1rem; border-radius: 8px; margin: 1rem 0; font-size: 0.9rem;">
+                            <p>📲 You will receive a prompt on your phone to confirm the payment.</p>
+                            <p style="margin-top: 0.5rem; font-weight: 600; color: #667eea;">Amount: ${convertedPrice} (Malawi Kwacha)</p>
+                        </div>
+                    `
+                },
+                'mpamba': {
+                    title: '📱 MPamba Payment (Malawi)',
+                    form: `
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="text" placeholder="e.g., 0888123456" id="paymentPhone">
+                        </div>
+                        <div style="background: #f0f0f0; padding: 1rem; border-radius: 8px; margin: 1rem 0; font-size: 0.9rem;">
+                            <p>📲 Follow the SMS prompt to complete your payment.</p>
+                            <p style="margin-top: 0.5rem; font-weight: 600; color: #667eea;">Amount: ${convertedPrice} (Malawi Kwacha)</p>
+                        </div>
+                    `
+                },
+                'visa-atm': {
+                    title: '🏧 ATM Visa Card Payment (Malawi)',
+                    form: `
+                        <div class="form-group">
+                            <label>Card Number</label>
+                            <input type="text" placeholder="1234 5678 9012 3456" id="cardNumber" maxlength="19">
+                        </div>
+                        <div style="display: flex; gap: 1rem;">
+                            <div class="form-group" style="flex: 1;">
+                                <label>Expiry (MM/YY)</label>
+                                <input type="text" placeholder="12/25" id="cardExpiry" maxlength="5">
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label>CVV</label>
+                                <input type="text" placeholder="123" id="cardCVV" maxlength="3">
+                            </div>
+                        </div>
+                        <div style="background: #f0f0f0; padding: 1rem; border-radius: 8px; margin: 1rem 0; font-size: 0.9rem;">
+                            <p style="font-weight: 600; color: #667eea;">Amount: ${convertedPrice} (Malawi Kwacha)</p>
+                        </div>
+                    `
+                },
+                'creditcard': {
+                    title: '💳 Credit Card Payment (USA)',
+                    form: `
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="John Doe" id="cardName">
+                        </div>
+                        <div class="form-group">
+                            <label>Card Number</label>
+                            <input type="text" placeholder="1234 5678 9012 3456" id="cardNumber" maxlength="19">
+                        </div>
+                        <div style="display: flex; gap: 1rem;">
+                            <div class="form-group" style="flex: 1;">
+                                <label>Expiry (MM/YY)</label>
+                                <input type="text" placeholder="12/25" id="cardExpiry" maxlength="5">
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label>CVV</label>
+                                <input type="text" placeholder="123" id="cardCVV" maxlength="3">
+                            </div>
+                        </div>
+                        <div style="background: #f0f0f0; padding: 1rem; border-radius: 8px; margin: 1rem 0; font-size: 0.9rem;">
+                            <p style="font-weight: 600; color: #667eea;">Amount: ${convertedPrice} (US Dollars)</p>
+                        </div>
+                    `
+                },
+                'paypal': {
+                    title: '🅿️ PayPal Payment (USA)',
+                    form: `
+                        <div style="text-align: center; padding: 2rem; background: #f0f0f0; border-radius: 8px;">
+                            <p style="margin-bottom: 1rem;">You will be redirected to PayPal to complete your payment securely.</p>
+                            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">Click "Complete Payment" to proceed.</p>
+                            <p style="font-weight: 600; color: #667eea;">Amount: ${convertedPrice} (US Dollars)</p>
+                        </div>
+                    `
+                }
+            };
+
+            if (paymentMethods[method]) {
+                title = paymentMethods[method].title;
+                formHTML = paymentMethods[method].form;
+            }
+
+            document.getElementById('paymentMethodTitle').textContent = title;
+            document.getElementById('paymentForm').innerHTML = formHTML;
+            closeModal('paymentModal');
+            openModal('paymentProcessingModal');
+        }
+
+        function processPayment() {
+            if (!selectedPaymentMethod) return;
+            if (!selectedSubscription.plan) {
+                alert('❌ Please select a subscription plan');
+                return;
+            }
+
+            // Validation based on payment method
+            if (selectedPaymentMethod === 'airtel' || selectedPaymentMethod === 'mpamba') {
+                const phone = document.getElementById('paymentPhone')?.value;
+                if (!phone) { alert('Enter phone number'); return; }
+            } else if (selectedPaymentMethod === 'creditcard' || selectedPaymentMethod === 'visa-atm') {
+                const cardNum = document.getElementById('cardNumber')?.value;
+                const expiry = document.getElementById('cardExpiry')?.value;
+                const cvv = document.getElementById('cardCVV')?.value;
+                if (!cardNum || !expiry || !cvv) { alert('Fill all card details'); return; }
+            }
+
+            // Simulate payment processing
+            alert(`Processing payment of ${selectedSubscription.price}...`);
+            
+            // Grant premium access with subscription duration
+            currentUser.isPremium = true;
+            currentUser.subscriptionPlan = selectedSubscription.plan;
+            currentUser.subscriptionPrice = selectedSubscription.price;
+            
+            const expiryDate = new Date();
+            expiryDate.setDate(expiryDate.getDate() + selectedSubscription.days);
+            currentUser.premiumExpiry = expiryDate.toLocaleDateString();
+
+            closeModal('paymentProcessingModal');
+            alert(`✅ Payment successful! You now have ${selectedSubscription.plan.toUpperCase()} premium access (${selectedSubscription.days} days).\n\nExpires: ${currentUser.premiumExpiry}`);
+
+            // If there was a pending message, start it now
+            if (pendingMessageName) {
+                const name = pendingMessageName;
+                pendingMessageName = null;
+                currentConversation = { name, messages: [] };
+                renderConversations();
+                showPage('messages');
+            }
+        }
+
+        function submitReport() {
+            const reason = document.querySelector('input[name="reason"]:checked');
+            if (!reason) { alert('Select a reason'); return; }
+            alert('Report submitted! Our team will review it.');
+            closeModal('reportModal');
+        }
+
+        function changePassword() {
+            const newPass = document.getElementById('newPassword').value;
+            const confirm = document.getElementById('confirmPassword').value;
+            if (newPass !== confirm) { alert('Passwords do not match'); return; }
+            if (newPass.length < 8) { alert('Password must be 8+ chars'); return; }
+            alert('Password changed!');
+            closeModal('changePasswordModal');
+        }
+
+        function deleteAccount() {
+            if (confirm('Delete account permanently?')) {
+                alert('Account deleted');
+                logout();
+            }
+        }
+
+        function applyFilters() {
+            renderProfiles();
+        }
+
+        function renderAdmin() {
+            document.getElementById('reportsTable').innerHTML = `
+                <tr><td>User123</td><td>FakeProfile</td><td>Inappropriate photos</td><td>
+                    <button class="action-btn btn-ban" onclick="alert('User banned')">Ban</button>
+                </td></tr>
+            `;
+        }
+
+        // Subscription expiry monitor - runs every 5 seconds
+        function startSubscriptionMonitor() {
+            setInterval(() => {
+                if (currentUser && currentUser.isPremium && isSubscriptionExpired()) {
+                    checkAndRevokeExpiredSubscription();
+                }
+            }, 5000);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            cacheDOM();
+            DOM_CACHE.nav.style.display = 'none';
+            startSubscriptionMonitor();
+            
+            // Fast event delegation for profile actions
+            document.addEventListener('click', (e) => {
+                const target = e.target.closest('[data-action]') || e.target;
+                const action = target.dataset?.action;
+                const id = target.dataset?.id;
+                const name = target.dataset?.name;
+                const index = target.dataset?.index;
+
+                if (action === 'like' && id) {
+                    e.preventDefault();
+                    likeProfile(parseInt(id));
+                } else if (action === 'message' && name) {
+                    startConversation(name);
+                } else if (action === 'report' && id && name) {
+                    openReportModal(parseInt(id), name);
+                } else if (action === 'block' && id) {
+                    blockUser(parseInt(id));
+                } else if (index !== undefined && e.target.closest('.conversation-item')) {
+                    selectConversation(parseInt(index), e.target.closest('.conversation-item').dataset.name);
+                }
+            }, { passive: true, capture: false });
+
+            const messageInput = document.getElementById('messageInput');
+            if (messageInput) {
+                messageInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        sendMessage();
+                    }
+                });
+            }
+        }, { once: true });
+    </script>
+
+    <!-- Schema.org Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Kumpanje",
+        "alternateName": "Kumpanje Dating Platform",
+        "description": "Premium online dating platform for singles 18+",
+        "url": "https://kumpanje.com",
+        "applicationCategory": "SocialNetworkingApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "Kumpanje",
+            "url": "https://kumpanje.com"
+        },
+        "image": "https://kumpanje.com/logo.png",
+        "operatingSystem": "Web",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-800-KUMPANJE",
+            "contactType": "Customer Service"
+        }
+    }
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Kumpanje",
+        "url": "https://kumpanje.com",
+        "logo": "https://kumpanje.com/logo.png",
+        "description": "Premium 18+ online dating platform connecting singles worldwide",
+        "sameAs": [
+            "https://www.facebook.com/kumpanje",
+            "https://www.twitter.com/kumpanje",
+            "https://www.instagram.com/kumpanje"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@kumpanje.com",
+            "contactType": "Customer Service"
+        }
+    }
+    </script>
+</body>
+</html>
